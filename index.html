@@ -84,9 +84,9 @@
 <!-- Name Popup -->
 <div id="nameModal">
   <div class="modal-content">
-    <h2>Apka Shubh Naam</h2>
+    <h2>Apna Naam Darj Karen</h2>
     <input type="text" id="userName" placeholder="Yahan apna naam likhen" />
-    <button onclick="submitName()">Shuru Karo</button>
+    <button onclick="submitName()">Let's Start</button>
   </div>
 </div>
 
@@ -95,26 +95,29 @@
 <div class="container">
   <h1>Darr Ki Kahani</h1>
 
-  <!-- Adsterra Ad Placeholder 1 -->
+  <!-- Native Banner Ad -->
   <div class="ad-box" id="ad-top">
-    <!-- Place your Adsterra script here -->
+    <script async="async" data-cfasync="false" src="//luckilygelatine.com/febf64af04aea11f9676f6f4e409af9b/invoke.js"></script>
+    <div id="container-febf64af04aea11f9676f6f4e409af9b"></div>
   </div>
 
   <div class="story" id="storyContent">
     Ek chhoti si basti mein raat ke 2 baje ek ladki ke cheekhne ki awaaz aayi. Har koi soya hua tha, lekin ek aadmi ne khidki se dekha to usne sirf ek parcha dekha...
-    
     <br/><br/>
     Us par likha tha: "<span id="userInsert">Tum...</span> wapas aa gaye?"
-    
     <br/><br/>
     Tabhi achanak se light chali gayi, aur darwaza khula...
   </div>
 
-  <!-- Adsterra Ad Placeholder 2 -->
-  <div class="ad-box" id="ad-middle">
-    <!-- Place another Adsterra script here -->
-  </div>
+  <!-- Mid-story Native Ad -->
+  <div class="ad-box" id="ad-middle"></div>
 </div>
+
+<!-- Popunder Ad -->
+<script type='text/javascript' src='//luckilygelatine.com/dc/1b/21/dc1b21e63d59a476871cbc9a05a61f34.js'></script>
+
+<!-- Social Bar -->
+<script type='text/javascript' src='//luckilygelatine.com/9e/bc/47/9ebc47479ff7c1006f8d5abf2364c70c.js'></script>
 
 <script>
   function submitName() {
@@ -130,29 +133,8 @@
     document.body.style.overflow = "auto";
   }
   document.body.style.overflow = "hidden";
-
-  // Optional: Lazy load Adsterra ad after scroll 30%
-  window.addEventListener("scroll", () => {
-    const trigger = document.getElementById("ad-middle");
-    const position = trigger.getBoundingClientRect().top;
-    if (position < window.innerHeight && !window.adLoaded) {
-      window.adLoaded = true;
-      const adScript = document.createElement("script");
-      adScript.src = "https://YOUR_ADSTERRA_SCRIPT.js";
-      trigger.appendChild(adScript);
-    }
-  });
 </script>
 
-  Social Bar:
-<script type='text/javascript' src='//luckilygelatine.com/9e/bc/47/9ebc47479ff7c1006f8d5abf2364c70c.js'></script>
-
-Popunder:
-<script type='text/javascript' src='//luckilygelatine.com/dc/1b/21/dc1b21e63d59a476871cbc9a05a61f34.js'></script>
-
-Native Banner:
-<script async="async" data-cfasync="false" src="//luckilygelatine.com/febf64af04aea11f9676f6f4e409af9b/invoke.js"></script>
-<div id="container-febf64af04aea11f9676f6f4e409af9b"></div>
-  
 </body>
 </html>
+
