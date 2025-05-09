@@ -105,8 +105,8 @@
 <!-- Name Popup -->
 <div id="nameModal">
   <div class="modal-content">
-    <h2>Apna Naam Darj Karen</h2>
-    <input type="text" id="userName" placeholder="Yahan apna naam likhen" />
+    <h2>Enter your Name First</h2>
+    <input type="text" id="userName" placeholder="Enter here" />
     <button onclick="submitName()">Let's Start</button>
   </div>
 </div>
@@ -190,7 +190,7 @@
     const email = document.getElementById("suggEmail").value.trim();
     const message = document.getElementById("suggMessage").value.trim();
     const subject = "Website Suggestion";
-    const body = `नाम: ${name}%0Aईमेल: ${email}%0Aसंदेश:%0A${message}`;
+    const body = `Name: ${name}%0AEmail: ${email}%0AMassage:%0A${message}`;
     const mailtoLink = `mailto: adityasinghzrx@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     window.location.href = mailtoLink;
     return false;
