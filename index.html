@@ -77,7 +77,7 @@
       margin: 30px 0;
       text-align: center;
     }
-    <!-- Suggestion Form (footer section) -->
+    
   #suggestion-form {
     background-color: #111;
     color: white;
@@ -155,7 +155,7 @@
 
 ऐसे में गांव के लोगों का तो यह कहना है कि बह खजाना उस बाईसा का है उसकी तो खुद की कोई संतान नहीं है इसलिए वह पितरों के खजाने के बराबर है, इसलिए जो भी उसे लेने के लिए नियत रखता है बह कभी अपने जीवन में सुखी नहीं रह पाता ।
 
-    ऐसे में आज भी वह खजाना उस हवेली के एक कमरे में कैद है लेकिन उस के पीछे क्या रहस्य है यह कोई नहीं जान पाया है••• 
+    ऐसे में आज भी वह खजाना उस हवेली के एक कमरे में कैद है लेकिन उस के पीछे क्या रहस्य है यह कोई नहीं जान पाया है••• ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
     अगर तुम वहां जाओगे तो उस दरवाजे में लगे एक छोटे से बोर्ड पा लिखा मिलेगा: "<span id="userInsert"> तुम...</span> अंदर मत आना!"
     <br/><br/>
     यह एक सच्ची घटना पर आधारित है... ★ आपको यह कहानी कैसी लगी हमे जवाब जरूर दे ---
@@ -179,7 +179,20 @@
 
 <!-- Social Bar -->
 <script type='text/javascript' src='//luckilygelatine.com/74/97/f7/7497f70d155e7d21a1b911995f6700cc.js'></script>
+<script>
+  function sendMail() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
 
+    let subject = "नया सुझाव";
+    let body = `नाम: ${name}%0Aईमेल: ${email}%0Aसंदेश:%0A${message}`;
+    let mailtoLink = `mailto: adityasinghzrx@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    window.location.href = mailtoLink;
+    return false; // Prevent actual form submission
+  }
+</script>
 <script>
   function submitName() {
     const name = document.getElementById("userName").value.trim();
@@ -195,20 +208,7 @@
   }
   document.body.style.overflow = "hidden";
 </script>
-  <script>
-  function sendMail() {
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
-
-    let subject = "नया सुझाव";
-    let body = `नाम: ${name}%0Aईमेल: ${email}%0Aसंदेश:%0A${message}`;
-    let mailtoLink = `mailto: adityasinghzrx@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-    window.location.href = mailtoLink;
-    return false; // Prevent actual form submission
-  }
-  </script>
+  
 
 </body>
 </html>
