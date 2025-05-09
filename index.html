@@ -77,6 +77,39 @@
       margin: 30px 0;
       text-align: center;
     }
+    <!-- Suggestion Form (footer section) -->
+  #suggestion-form {
+    background-color: #111;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  #suggestion-form input,
+  #suggestion-form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    max-width: 400px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+    #suggestion-form button {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #suggestion-form button:hover {
+    background-color: darkred;
+  }
+    
   </style>
 </head>
 <body>
@@ -131,6 +164,15 @@
   <!-- Mid-story Native Ad -->
   <div class="ad-box" id="ad-middle"></div>
 </div>
+  <div id="suggestion-form">
+  <h2>हमें अपना सुझाव भेजें</h2>
+  <form onsubmit="return sendMail();">
+    <input type="text" id="name" placeholder="आपका नाम" required><br>
+    <input type="email" id="email" placeholder="आपकी ईमेल" required><br>
+    <textarea id="message" rows="5" placeholder="आपका सुझाव..." required></textarea><br>
+    <button type="submit">भेजें</button>
+  </form>
+  </div>
 
 <!-- Popunder Ad -->
 <script type='text/javascript' src='//luckilygelatine.com/c9/57/2b/c9572b2f2b1339187096f2d6ff99bb29.js'></script>
@@ -153,6 +195,20 @@
   }
   document.body.style.overflow = "hidden";
 </script>
+  <script>
+  function sendMail() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    let subject = "नया सुझाव";
+    let body = `नाम: ${name}%0Aईमेल: ${email}%0Aसंदेश:%0A${message}`;
+    let mailtoLink = `mailto: adityasinghzrx@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    window.location.href = mailtoLink;
+    return false; // Prevent actual form submission
+  }
+  </script>
 
 </body>
 </html>
