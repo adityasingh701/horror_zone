@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scary Horror Story</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #000;
+      color: #eee;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      color: crimson;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .story {
+      margin-top: 20px;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    #nameModal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .modal-content {
+      background: #111;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+    }
+    input[type="text"], input[type="email"], textarea {
+      padding: 10px;
+      font-size: 16px;
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: crimson;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #nameButton {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      padding: 12px 20px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      display: none;
+      z-index: 1000;
+    }
+    .ad-box {
+      margin: 30px 0;
+      text-align: center;
+    }
+    #suggestion-form {
+      background-color: #111;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    #suggestion-form button {
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #suggestion-form button:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Name Popup -->
+<div id="nameModal">
+  <div class="modal-content">
+    <h2>Apna Naam Darj Karen</h2>
+    <input type="text" id="userName" placeholder="Yahan apna naam likhen" />
+    <button onclick="submitName()">Let's Start</button>
+  </div>
+</div>
+
+<button id="nameButton"></button>
+
+<div class="container">
+  <h1>Haveli Ka Khajana</h1>
+
+  <!-- Native Banner Ad -->
+  <div class="ad-box" id="ad-top">
+    <script async="async" data-cfasync="false" src="//luckilygelatine.com/fd70d8f6809720e800390ed4cd5a5b73/invoke.js"></script>
+    <div id="container-fd70d8f6809720e800390ed4cd5a5b73"></div>
+  </div>
+
+  <div class="story" id="storyContent">
+    ... तुम्हारी पूरी कहानी ...
+    <br/><br/>
+    "<span id="userInsert">तुम...</span> अंदर मत आना!"
+  </div>
+
+  <!-- Mid-story Native Ad -->
+  <div class="ad-box" id="ad-middle"></div>
+</div>
+
+<!-- Popunder Ad -->
+<script type='text/javascript' src='//luckilygelatine.com/c9/57/2b/c9572b2f2b1339187096f2d6ff99bb29.js'></script>
+
+<!-- Social Bar -->
+<script type='text/javascript' src='//luckilygelatine.com/74/97/f7/7497f70d155e7d21a1b911995f6700cc.js'></script>
+
+<!-- Suggestion Form -->
+<div id="suggestion-form">
+  <h2>हमें अपना सुझाव भेजें</h2>
+  <form onsubmit="return sendMail();">
+    <input type="text" id="suggName" placeholder="आपका नाम" required><br>
+    <input type="email" id="suggEmail" placeholder="आपकी ईमेल" required><br>
+    <textarea id="suggMessage" rows="5" placeholder="आपका सुझाव..." required></textarea><br>
+    <button type="submit">भेजें</button>
+  </form>
+</div>
+
+<script>
+  function submitName() {
+    const name = document.getElementById("userName").value.trim();
+    if (!name) {
+      alert("Naam likhna zaroori hai.");
+      return;
+    }
+    document.getElementById("nameModal").style.display = "none";
+    document.getElementById("nameButton").textContent = name;
+    document.getElementById("nameButton").style.display = "block";
+    document.getElementById("userInsert").textContent = name;
+    document.body.style.overflow = "auto";
+  }
+  document.body.style.overflow = "hidden";
+
+  function sendMail() {
+    const name = document.getElementById("suggName").value.trim();
+    const email = document.getElementById("suggEmail").value.trim();
+    const message = document.getElementById("suggMessage").value.trim();
+    const subject = "Website Par Naya Sujhav";
+    const body = `नाम: ${name}%0Aईमेल: ${email}%0Aसंदेश:%0A${message}`;
+    const mailtoLink = `mailto:YOUR_EMAIL@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailtoLink;
+    return false;
+  }
+</script>
+
+</body>
+</html>
